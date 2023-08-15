@@ -1,4 +1,4 @@
-# etch-a-sketch
+# Etch-a-sketch
 Etch-a-sketch with Javascript <br>
 <br>
 ## Link
