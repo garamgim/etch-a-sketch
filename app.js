@@ -64,12 +64,12 @@ function updateInput(val) {
 /* BUTTONS */
 
 // Refresh button
-let gridDivs = document.querySelectorAll('.grid-child');
 
 const refreshButton = document.getElementById('refresh');
 refreshButton.addEventListener('click', resetColor);
 
 function resetColor() {
+    let gridDivs = document.querySelectorAll('.grid-child');
     gridDivs.forEach(grid => { grid.style.backgroundColor = '#f9f9e1' });
 }
 
