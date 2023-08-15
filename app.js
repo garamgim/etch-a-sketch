@@ -21,7 +21,7 @@ function makeGrid(num) {
 
         div.className = 'grid-child';
         div.setAttribute('id', `${i}`);
-        div.style.flex = `calc(70vh / ${num})`;
+        div.style.flex = `calc(60vh / ${num})`;
 
         div.addEventListener('mouseenter', (e) => {
 
