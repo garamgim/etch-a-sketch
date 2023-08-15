@@ -4,8 +4,8 @@
 // Initialize
 
 let containerDiv = document.querySelector('.grid-container');
-let gridDivs = document.querySelectorAll('.grid-child');
 let pencilColor = '#a7a790';
+let isRainbow = false
 
 makeGrid(16);
 
@@ -17,15 +17,24 @@ function makeGrid(num) {
     for (let i = 1; i <= num * num; i++) {
 
         let div = document.createElement('div');
+        containerDiv.appendChild(div);
+
         div.className = 'grid-child';
         div.setAttribute('id', `${i}`);
         div.style.flex = `calc(70vh / ${num})`;
-        containerDiv.appendChild(div);
 
         div.addEventListener('mouseenter', (e) => {
-            if (drawing === true) {
+
+            if (drawing === true && isRainbow === false) {
+
                 e.target.style.backgroundColor = pencilColor;
+
+            } else if (drawing === true && isRainbow === true) {
+
+                e.target.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16);;
+
             }
+
         });
     }
 }
@@ -51,9 +60,45 @@ function updateInput(val) {
 
 
 
+
+/* BUTTONS */
+
 // Refresh button
+let gridDivs = document.querySelectorAll('.grid-child');
 
 const refreshButton = document.getElementById('refresh');
-refreshButton.addEventListener('click', () => {
-    gridDivs.forEach(grid => grid.style.backgroundColor = '#f9f9e1');
-});
+refreshButton.addEventListener('click', resetColor);
+
+function resetColor() {
+    gridDivs.forEach(grid => { grid.style.backgroundColor = '#f9f9e1' });
+}
+
+// Pencil button
+
+const pencilButton = document.getElementById('pencil');
+pencilButton.addEventListener('click', () => {
+    pencilColor = '#a7a790';
+    isRainbow = false;
+})
+
+// Eraser button
+
+const eraserButton = document.getElementById('eraser');
+eraserButton.addEventListener('click', () => {
+    pencilColor = '#f9f9e1';
+    isRainbow = false;
+})
+
+// Rainbow button
+
+const rainbowButton = document.getElementById('rainbow');
+rainbowButton.addEventListener('click', () => {
+    isRainbow = true;
+})
+
+// Palette
+
+const palette = document.getElementById('color');
+palette.addEventListener('input', () => {
+    pencilColor = palette.value;
+})

@@ -12,27 +12,32 @@
     <div class="window">
         <div class="window-title">
             <span>Etch-a-Sketch</span>
-            <button id="refresh">↺</button>
+            <button id="refresh"> ↺ </button>
         </div>
         <div class="window-header">
             <span>Etch-a-Sketch</span>
         </div>
         <div class="window-content">
             <div class="setting">
+
                 <div class="tool">
                     <button id="pencil">PENCIL</button>
                     <button id="eraser">ERASER</button>
                 </div>
 
-                <button>WATERCOLOR</button>
-                <button>RAINBOW</button>
-                <button>PALETTE</button>
+                <button id="rainbow">RAINBOW</button>
+
+                <div class="color">
+                    <label for="color">PALETTE</label>
+                    <input type="color" id="color">
+                </div>
 
                 <div class="grid-selection">
                     <p id="size">16 X 16</p>
                     <input type="range" id="slider" min="16" max="64" step="16" value="16"
                         onchange="updateInput(this.value);">
                 </div>
+
             </div>
             <div class="grid-container">
 
