@@ -12,7 +12,7 @@
     <div class="window">
         <div class="window-title">
             <span>Etch-a-Sketch</span>
-            <button>X</button>
+            <button id="refresh">↺</button>
         </div>
         <div class="window-header">
             <span>Etch-a-Sketch</span>
@@ -29,7 +29,9 @@
                 <button>PALETTE</button>
 
                 <div class="grid-selection">
-                    <input type="range" min="16" max="64" value="32">
+                    <p id="size">16 X 16</p>
+                    <input type="range" id="slider" min="16" max="64" step="16" value="16"
+                        onchange="updateInput(this.value);">
                 </div>
             </div>
             <div class="grid-container">

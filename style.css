@@ -24,15 +24,30 @@ div.window {
     background-color: #c2c2c2;
 }
 
+/* window-title (tab) */
+
 div.window-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #818181;
 }
+
+.window-title>span {
+    margin: 0 10px;
+}
+
+
+/* window header */
 
 div.window-header {
     padding-top: 10px;
     text-align: center;
     font-size: 60px;
 }
+
+
+/* window content (setting + palette) */
 
 div.window-content {
     display: flex;
@@ -41,10 +56,8 @@ div.window-content {
     padding-bottom: 4vh;
 }
 
-div.tool {
-    display: flex;
-    justify-content: space-between;
-}
+
+/* setting section */
 
 div.setting {
     display: flex;
@@ -52,6 +65,20 @@ div.setting {
     justify-content: space-evenly;
     height: 70vh;
 }
+
+div.tool {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.grid-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* grid */
 
 div.grid-container {
     width: 70vh;
@@ -66,4 +93,16 @@ div.grid-child {
     flex: calc(70vh/16);
     border: 0.5px solid black;
     box-sizing: border-box;
+}
+
+
+
+/* buttons */
+
+
+
+button#refresh {
+    font-size: 18px;
+    width: 24px;
+    margin: 3px;
 }
