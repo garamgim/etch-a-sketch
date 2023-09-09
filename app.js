@@ -101,4 +101,5 @@ rainbowButton.addEventListener('click', () => {
 const palette = document.getElementById('color');
 palette.addEventListener('input', () => {
     pencilColor = palette.value;
+    isRainbow = false;
 })
